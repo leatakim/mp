@@ -1,0 +1,103 @@
+/* 폰트 적용 */
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 로고(svg) */
+#레이어_1{
+    height:40px;
+}
+
+/*관리자 로고*/
+#adminLogo{
+    height:40px;
+}
+
+.nav-text-color{
+    /* color: rgb(251, 131, 107); */
+    color: black;
+}
+
+/* 마이페이지 nav 탈퇴하기 버튼 */
+.secession-button{
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 5px;
+}
+
+/*마이페이지 nav hover시*/
+.nav-text-color:hover {
+    color: rgb(251, 131, 107);
+}
+
+/* 부트스트랩 opacity 설정 덮어쓰기 */
+.bg-pink {
+    --bs-bg-opacity: 1;
+    color: rgba(255,255,255,0.85) !important;
+    background-color: rgb(251, 131, 107);
+}
+
+.bgPink{
+    color: rgba(255,255,255,0.85) !important;
+}
+
+/*버튼 핑크색으로 ~ */
+.button-pink{
+    background-color: rgb(251, 131, 107);
+    border: none;
+}
+
+/*버튼 hover시*/
+.button-pink:hover{
+    background-color: rgb(251, 131, 107);
+    border: none;
+}
+
+/*버튼*/
+#btnMain{
+    background-color: rgb(251, 131, 107);
+    color: white;
+    border: none;
+}
+
+
+/* 게시글 리스트 a태그 style없애기*/
+.boardList a{
+    color: black;
+    text-decoration: none;
+}
+
+/*sweetalert2*/
+.swal2-title { 
+    font-size:16px !important;
+    font-weight: 500 !important; 
+}
+
+.swal2-container.swal2-center>.swal2-popup {
+    padding: 2em;
+    display: grid;
+}
+
+.swal2-html-container{
+    font-size: 0.7em !important;
+}
+
+/* footer */
+#footer{
+   background-color: #999;
+}
+
+/*핑크색으로 ~ */
+.pinkIcon{
+    color: rgb(251, 131, 107);
+}
+
+
+/* 마우스 커서*/
+/* 산책 강쥐 (전체에 적용시키기) */
+/* * {cursor: url(https://cur.cursors-4u.net/nature/nat-4/nat354.ani), url(https://cur.cursors-4u.net/nature/nat-4/nat354.png), auto !important;}*/
+
+/* 고양이 발바닥 (전체에 적용시키기) */
+/* * { cursor: url(https://cur.cursors-4u.net/nature/nat-3/nat260.cur), default; } */
+
+/* 갈색 발바닥 (내용만 긁어서 cursor :pointer 자리에 넣으면 되는데... 전체 바꿀거면 bootstrap css의 내용을 바꾸면 될듯!)*/
+/* * { cursor: url(https://cur.cursors-4u.net/nature/nat-3/nat261.cur), pointer; } */

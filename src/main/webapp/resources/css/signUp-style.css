@@ -1,0 +1,184 @@
+/*회원가입 위 로고*/
+#signUpLogo{
+    width: 300px;
+}
+
+.signUp-container{
+    border-top: 1px solid black;
+    padding-top: 48px;
+}
+
+.confirm-area{
+    display: flex;
+}
+
+.confirm-area span{
+    color: red;
+}
+
+#currTel, #memberTel, #sample4_postcode{
+    width: 87%;
+    margin-right: 10px;
+}
+
+.test-area{
+    display: flex;
+    flex-direction: column;
+}
+
+/*체크, 버튼 등 영역*/
+.confirm-area > .spaceArea{
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*버튼 영역*/
+.confirmBtnArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 인증 버튼*/
+/* #confirmBtn{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color:rgb(251, 131, 107); 
+    color: white;
+} */
+
+/*체크 버튼*/
+.fa-circle-check{
+    color: lightgreen;
+    
+}
+
+.fa-circle-exclamation{
+    color: rgb(251, 131, 107);
+}
+
+
+
+#signUpBtn, #goSignUp{
+    background-color:rgb(251, 131, 107); 
+    border: none;
+    opacity: 1;
+    z-index: 10;
+}
+
+
+/*프로필 이미지 영역*/
+.profile-image-area{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 20px;
+}
+
+/*이미지 영역*/
+#img-area{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    height: 0px;
+    width: 50%;
+    padding-bottom: 50%;
+}
+
+/*프로필 이미지 사이즈*/
+#profileImg{ 
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* 기존 input버튼 지우기 */
+#profileImage{
+    display: none;
+}
+
+/*프로필 이미지용 버튼 area*/
+.imageBtnArea{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.imageBtnArea > label{
+    width: 30%;
+    background-color: rgb(251, 131, 107);
+    color: white; 
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+    /* cursor: url(https://cur.cursors-4u.net/nature/nat-3/nat261.cur), pointer; */
+}
+
+#gray{
+    background-color: #999;
+    cursor: default;
+}
+
+#bg-light{
+    --bs-bg-opacity: 0;
+}
+
+
+
+/*주소*/
+.confirmBtnArea > button{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+
+    background-color:rgb(251, 131, 107); 
+    color: white;
+}
+
+#signUpForm{
+    padding: 48px;
+    border-top: 1px solid black;
+}
+
+
+/*input태그 아래 margin*/
+
+
+/*유효성 검사 문구 작성란*/
+.validate-area{
+    height: 20px;
+    padding-left: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+/* 유효한 경우 */
+.confirm{
+    color: #999;
+}
+
+/* 유효하지 않은 경우 */
+.error{
+    color: rgb(251, 131, 107); ;
+}
+
+
+/* 버튼핑크~ */
+.button-pink{
+    background-color: rgb(251, 131, 107);
+    border: none;
+}
+.button-pink:hover{
+    background-color: rgb(251, 131, 107);
+    border: none;
+}

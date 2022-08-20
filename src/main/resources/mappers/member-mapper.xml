@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="memberMapper">
+
+	<resultMap type="member" id="member_rm">
+		<id property="memberNo" column="MEMBER_NO"/>
+		
+		<result property="memberEmail" 		column="MEMBER_EMAIL"/>
+		<result property="memberPw" 		column="MEMBER_PW"/>
+		<result property="memberName" 		column="MEMBER_NAME"/>
+		<result property="memberTel" 		column="MEMBER_TEL"/>
+		<result property="memberAddress" 	column="MEMBER_ADDR"/>
+		<result property="profileImage" 	column="PROFILE_IMG"/>
+		<result property="enrollDate" 		column="ENROLL_DT"/>
+		<result property="secessionFlag" 	column="SECESSION_FL"/>
+	</resultMap>
+	
+	
+	<select id="emailReduplicateCheck" resultType="_int" parameterType="string">
+		SELECT COUNT(*)
+		FROM MEMBER
+		WHERE MEMBER_EMAIL = #{memberEmail}
+		AND SECESSION_FL = 'N'
+	</select>
+
+	<select id="selectCertification" resultType="_int" parameterType="string">
+		SELECT COUNT(*)
+		FROM EMAIL_CERTIFICATION
+		WHERE EMAIL = #{memberEmail}
+	</select>
+	
+	<insert id="insertCertification" parameterType="map">
+		INSERT INTO EMAIL_CERTIFICATION VALUES(#{memberEmail},#{cNumber},SYSDATE)
+	</insert>
+	
+	<update id="updateCertification" parameterType="map">
+		UPDATE EMAIL_CERTIFICATION SET
+		C_NUMBER = #{cNumber},
+		ISSUE_DT = SYSDATE
+		WHERE EMAIL = #{memberEmail}
+	</update>
+	
+	<select id="emailMemberCheck" resultType="_int" parameterType="map">
+		SELECT 
+		   CASE WHEN (SELECT '1' FROM EMAIL_CERTIFICATION
+		            WHERE EMAIL = #{memberEmail}
+		            AND C_NUMBER = #{cNumber})  = 1
+		      THEN NVL( (SELECT '1' FROM EMAIL_CERTIFICATION
+		            WHERE EMAIL = #{memberEmail}
+		            AND ISSUE_DT + (INTERVAL '5' MINUTE) >= SYSDATE) , '2') 
+		      ELSE '3'	
+		   END
+		FROM DUAL
+	</select>
+	
+	<insert id="signUp" parameterType="Member">
+		INSERT INTO MEMBER 
+		VALUES(SEQ_MEMBER_NO.NEXTVAL,#{memberEmail},#{member.memberPw},#{memberName},#{memberTel},
+		  #{member.memberAddress},#{profileImage},DEFAULT,DEFAULT)
+	</insert>
+	
+	<select id="login" parameterType="member" resultMap="member_rm">
+		SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NAME, MEMBER_TEL, MEMBER_ADDR, PROFILE_IMG,
+			   TO_CHAR(ENROLL_DT, 'YYYY-MM-DD HH24:MI:SS') AS ENROLL_DT, MEMBER_PW
+		FROM MEMBER
+		WHERE MEMBER_EMAIL = #{memberEmail}
+		AND SECESSION_FL = 'N'
+	</select>
+	
+</mapper>
