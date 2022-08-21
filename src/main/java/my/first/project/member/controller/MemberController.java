@@ -66,6 +66,8 @@ public class MemberController {
 		logger.info("here2");
 		logger.info("here2");
 		logger.info("here2");
+		logger.info("here2");
+		logger.info("here2");
 		// 주소에 구분자 ",," 추가
 		member.setMemberAddress( String.join(",,", memberAddress));
 		
