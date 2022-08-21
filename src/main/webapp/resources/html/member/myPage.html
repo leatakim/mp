@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title></title>
+   <link rel="stylesheet" href="">
+</head>
+<body>
+    <div>이메일 <input type="text" value="leatakim@daum.net" disabled></div>
+    <div>이름 <input type="text" value="김성태" disabled></div>
+    <div>전화번호 <input type="tel" value="01024492832" disabled></div><button>수정</button>
+
+    <br>
+
+     <!-- 주소 (다음 api) -->
+     <div class="form-floating mb-3 confirm-area">
+        <input class="form-control" type="text" id="sample4_postcode" name="memberAddress" maxlength="6">
+        <label for="memberAddress">우편번호</label>
+        <div class="spaceArea confirmBtnArea">
+            <button type="button" onclick="sample4_execDaumPostcode()">검색</button>
+        </div>
+    </div>
+
+    <div class="form-floating mb-3 confirm-area">
+        <input class="form-control" type="text" name="memberAddress" id="sample4_roadAddress">
+        <label for="memberAddress">도로명주소</label>
+    </div>
+
+    <div class="form-floating mb-3 confirm-area">
+        <input class="form-control" type="text" name="memberAddress" id="sample4_detailAddress">
+        <label for="memberAddress">상세주소</label>
+    </div>
+    <div class="form-floating validate-area"></div>
+</body>
+</html>
