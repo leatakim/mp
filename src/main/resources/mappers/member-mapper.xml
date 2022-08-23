@@ -53,7 +53,7 @@
 		FROM DUAL
 	</select>
 	
-	<insert id="signUp" parameterType="Member">
+	<insert id="signUp" parameterType="member">
 		INSERT INTO MEMBER 
 		VALUES(SEQ_MEMBER_NO.NEXTVAL,#{memberEmail},#{member.memberPw},#{memberName},#{memberTel},
 		  #{member.memberAddress},#{profileImage},DEFAULT,DEFAULT)
@@ -66,5 +66,21 @@
 		WHERE MEMBER_EMAIL = #{memberEmail}
 		AND SECESSION_FL = 'N'
 	</select>
+	
+	<select id="kakaoEmailCheck" parameterType="String" resultMap="member_rm">
+		SELECT * FROM MEMBER
+		WHERE MEMBER_EMAIL = #{kakaoEmail}
+		AND SECESSION_FL = 'N'
+	</select>
+	
+	<insert id="insertNo" parameterType="member" useGeneratedKeys="true">
+		<selectKey keyProperty="memberNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_MEMBER_NO.NEXTVAL FROM DUAL
+		</selectKey>
+			INSERT INTO MEMBER
+			VALUES
+			(#{memberNo}, #{memberEmail}, NULL, #{memberName}, NULL,
+		  	DEFAULT, DEFAULT, DEFAULT, DEFAULT)
+	</insert>
 	
 </mapper>

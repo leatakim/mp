@@ -22,5 +22,9 @@ public interface MemberService {
 	public int signUp(Map<String, Object> map, MultipartFile uploadImage) throws IOException;
 
 	public Member login(Member inputMember);
+
+	public Member kakaoEmailCheck(String kakaoEmail);
+
+	public int insertNo(Member mem);
 	
 }

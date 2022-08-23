@@ -128,6 +128,22 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 
+	@Override
+	public Member kakaoEmailCheck(String kakaoEmail) {
+		System.out.println("kakaoEmailCheck Service");
+		return dao.kakaoEmailCheck(kakaoEmail);
+	}
+
+
+	@Override
+	public int insertNo(Member mem) {
+		int result = dao.insertNo(mem);
+		return result;
+	}
+
+	
+	
+
 	
 	
 	

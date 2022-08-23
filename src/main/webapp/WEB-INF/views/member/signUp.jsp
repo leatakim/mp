@@ -94,7 +94,7 @@
                     <!-- Contact form-->
                     <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5" id="bg-light">
                         <div class="text-center mb-5">
-                            <div class=" bg-gradient text-white rounded-3 mb-3"><img src="${contextPath}/resources/images/logo.png" id="signUpLogo"></div>
+                            <%-- <div class=" bg-gradient text-white rounded-3 mb-3"><img src="${contextPath}/resources/images/logo.png" id="signUpLogo"></div> --%>
                             <h1 class="fw-bolder">회원가입</h1>
                             <p class="lead fw-normal text-muted mb-0" id="welcome">환영합니다!</p>
                         </div>

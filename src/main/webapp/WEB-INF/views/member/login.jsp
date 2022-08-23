@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
     <c:choose>
@@ -26,12 +28,37 @@
                     <!-- checked 속성 : radio/checkbox를 체크하는 속성 -->
                     <input type="checkbox" name="saveId" ${chk}  id="saveId"> 아이디 저장
                 </label>
+
+                <div class=" btn col-xl-12" style="height: 50px; background-color: #fae100; "  onclick="kakaoLogin();">
+                    <a id="kakao-login-btn " href="javascript:void(0)" style=" color:black; line-height: 2; text-decoration: none;" >
+                        카카오 로그인
+                    </a>
+                </div>
             </form>
         </c:when>
         <c:otherwise>
             <a href="${contextPath}/member/myPage/info">마이페이지</a>
             <a href="${contextPath}/member/myPage/info">${loginMember.memberName}</a>
         </c:otherwise>
-  </c:choose>
+    </c:choose>
+
+    <script>
+        //카카오로그인
+        function kakaoLogin() {
+
+            $.ajax({
+                // url: '/login/getKakaoAuthUrl',
+                url: 'kakaoLogin',
+                type: 'get',
+                async: false,
+                dataType: 'text',
+                success: function (res) {
+                    location.href = res;
+                    console.log(res);
+                }
+            });
+        }
+
+    </script>
 </body>
 </html>

@@ -46,16 +46,21 @@ public class MemberDAO {
 		return sqlSession.selectOne("memberMapper.emailMemberCheck", map);
 	}
 
-//	public int signUp(Member account) {
-//		return sqlSession.insert("memberMapper.signUp", account);
-//	}
-
 	public int signUp(Map<String, Object> map) {
 		return sqlSession.insert("memberMapper.signUp", map);
 	}
 
 	public Member login(Member inputMember) {
 		return sqlSession.selectOne("memberMapper.login", inputMember);
+	}
+
+	public Member kakaoEmailCheck(String kakaoEmail) {
+		System.out.println("kakaoEmailCheck DAO");
+		return sqlSession.selectOne("memberMapper.kakaoEmailCheck", kakaoEmail);
+	}
+
+	public int insertNo(Member mem) {
+		return sqlSession.insert("memberMapper.insertNo", mem);
 	}
 
 

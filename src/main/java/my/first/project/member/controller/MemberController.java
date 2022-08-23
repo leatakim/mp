@@ -46,7 +46,7 @@ public class MemberController {
 	@Autowired
 	private MemberService service;
 	
-	private Logger logger = LoggerFactory.getLogger(InitFilter.class);
+	private Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
 	// 회원가입 화면 전환
 	@GetMapping("signUp-page")
